@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.urls import re_path as url
+from django.contrib import admin
+from django.urls import path
+from django.views.generic import TemplateView
+
+from takeawayDeliverySystem.back import views
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('api/login/', views.login),
+    path('api/register/', views.register),
+    path('api/deleteUser/', views.delete_user),
 ]
